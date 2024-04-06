@@ -13,6 +13,7 @@ namespace Connect4
         public string Name { get; set; }
         public string color;
 
+     
 
         public Player(int id, string name, string color)
         {
@@ -21,7 +22,7 @@ namespace Connect4
             this.color = color;
         }
 
-        public virtual void MakeMove()
+        public virtual void MakeMove(int collomn)
         {
         }
 

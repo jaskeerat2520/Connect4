@@ -17,17 +17,7 @@ namespace Connect4
         }
 
 
-        public override void MakeMove()
-        {
-
-          
-
-
-
-
-        }
-
-
+       
 
     }
 }

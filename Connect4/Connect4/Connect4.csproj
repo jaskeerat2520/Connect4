@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="bot.cs" />
     <Compile Include="Cells.cs" />
     <Compile Include="Connect4Game.cs" />
     <Compile Include="Console.cs" />
@@ -57,6 +58,7 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="GameBoard.cs" />
+    <Compile Include="Interface1.cs" />
     <Compile Include="ISettings.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
@@ -88,9 +90,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="images\coin.png" />
-    <Content Include="images\pngegg.png" />
-    <Content Include="images\SeekPng.com_pacman-sprite-png_3777584.png" />
+    <Content Include="Properties\images\coin.png" />
+    <Content Include="Properties\images\pngegg.png" />
+    <Content Include="Properties\images\SeekPng.com_pacman-sprite-png_3777584.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
