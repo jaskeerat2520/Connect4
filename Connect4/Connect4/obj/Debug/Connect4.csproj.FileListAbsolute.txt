@@ -8,3 +8,4 @@ C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.csproj.GenerateRe
 C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.csproj.CoreCompileInputs.cache
 C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.exe
 C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.pdb
+C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.Intro.resources

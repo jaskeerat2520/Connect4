@@ -4,9 +4,12 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Runtime.InteropServices;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Connect4
 {
@@ -14,7 +17,7 @@ namespace Connect4
     {
 
         private User currentUser;
-        private bot botPlayer;
+        private Bot botPlayer;
         private GameBoard board;
         private Connect4Game game;
         GameBoard gameBoard = new GameBoard();
@@ -26,9 +29,11 @@ namespace Connect4
             InitializeComponent();
 
             currentUser = new User(1, "thomas", "green");
+            botPlayer = new Bot();
 
-            botPlayer = new bot();
-       
+
+         
+
 
         }
 
@@ -51,7 +56,8 @@ namespace Connect4
 
 
                 gameBoard.dropDisc(row, collomn, 1);
-                AddCoin(row, collomn);
+                AddCoin(row, collomn, 1);
+                botTurn();
 
             }
         }
@@ -69,7 +75,8 @@ namespace Connect4
 
 
                 gameBoard.dropDisc(row, collomn, 1);
-                AddCoin(row, collomn);
+                AddCoin(row, collomn,1 );
+                botTurn();
 
             }
         }
@@ -88,7 +95,8 @@ namespace Connect4
 
 
                 gameBoard.dropDisc(row, collomn, 1);
-                AddCoin(row, collomn);
+                AddCoin(row, collomn, 1);
+                botTurn();
 
             }
         }
@@ -106,7 +114,8 @@ namespace Connect4
 
 
                 gameBoard.dropDisc(row, collomn, 1);
-                AddCoin(row, collomn);
+                AddCoin(row, collomn, 1);
+                botTurn();
 
             }
         }
@@ -127,32 +136,15 @@ namespace Connect4
                 
 
                 gameBoard.dropDisc(row, collomn, 1);
-                AddCoin(row, collomn);
-             
+                AddCoin(row, collomn, 1);
+                botTurn();
+
             }
 
            
 
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-            
-        }
-
-        private void TableLayoutPanelBoard_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void PictureBox_Click(object sender, EventArgs e)
-        {
-            // Handle PictureBox click event
-            PictureBox pictureBox = (PictureBox)sender;
-            int col = (int)pictureBox.Tag;
-          
-        }
 
 
 
@@ -161,8 +153,9 @@ namespace Connect4
            
             int collumn = 0;
             int row = 0;
+            int id = 2;
 
-            collumn = botPlayer.FindMove();
+            collumn = botPlayer.MakeMove();
             row = gameBoard.IsFull(collumn);
 
 
@@ -175,6 +168,7 @@ namespace Connect4
               
                 gameBoard.dropDisc(row, collumn, 2);
                 MessageBox.Show(gameBoard.GetBoardAsString());
+                AddCoin(row, collumn, 2);
 
 
 
@@ -182,25 +176,67 @@ namespace Connect4
 
         }
 
-        private void AddCoin(int row, int column)
+
+
+         private void ChangetoUser()
         {
-            _ = MessageBox.Show(row.ToString(), column.ToString());
-           
-            if (column == 0 && row ==1)
+
+            TextBoxTurn.Text = currentUser.Name;
+        }
+
+        private void ChangeToAi()
+        {
+            TextBoxTurn.Text = botPlayer.Name;
+        }
+
+
+        private void AddCoin(int row, int column, int id)
+        {
+            
+            
+        
+            String together = (column.ToString() + row.ToString());
+            String pictureBoxName = "PictureBox" + together.ToString();
+
+            MessageBox.Show(column.ToString());
+
+
+            MessageBox.Show(pictureBoxName);
+            Image imageName;
+
+
+
+            if (id == 1)
             {
-              
-                MessageBox.Show("helo");
-
-              
-
-
+                 imageName = Properties.Resources.coin;
+                //ChangeToAi()
+;            }
+            else
+            {
+                 imageName = Properties.Resources.pngegg;
+                //ChangetoUser();
             }
-            MessageBox.Show(gameBoard.GetBoardAsString());
-            botTurn();
+
+            Control[] controls = this.Controls.Find(pictureBoxName, true); // Assuming the PictureBox is contained within a form or a container
+
+            if (controls.Length > 0 && controls[0] is PictureBox pictureBoxToChange)
+            {
+                // Assuming you have images stored with names like "image1.jpg", "image2.jpg", etc.
+              
+                pictureBoxToChange.Image = imageName;
+                pictureBoxToChange.BringToFront();
+                pictureBoxToChange.BackColor = Color.FromArgb(41, 0, 255);
+            }
+            
+
+
+
+
 
 
 
         }
+
 
         private void ButtonCollomn5_Click(object sender, EventArgs e)
         {
@@ -215,7 +251,8 @@ namespace Connect4
 
 
                 gameBoard.dropDisc(row, collomn, 1);
-                AddCoin(row, collomn);
+                AddCoin(row, collomn, 1);
+                botTurn();
 
             }
 
@@ -234,7 +271,8 @@ namespace Connect4
 
 
                 gameBoard.dropDisc(row, collomn, 1);
-                AddCoin(row, collomn);
+                AddCoin(row, collomn, 1);
+                botTurn();
 
             }
         }

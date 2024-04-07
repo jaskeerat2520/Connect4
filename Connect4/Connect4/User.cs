@@ -12,12 +12,16 @@ namespace Connect4
 
 
     {
-        public User(int id, string name, string color) : base(id, name, color)
+        public User(int id, string name, string color) : base(name, id )
         {
         }
 
 
-       
+     
 
+        public override int MakeMove()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

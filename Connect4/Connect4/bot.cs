@@ -6,29 +6,20 @@ using System.Threading.Tasks;
 
 namespace Connect4
 {
-    internal class bot 
+    public class Bot : Player
     {
         private Random rnd = new Random();
-    
 
-        public bot()
-        {
-        }
 
-        
+        public Bot() : base("Computer", 2) { }
 
-        public bot(Random rnd )
-        {
-            this.rnd = rnd;
-           
-        }
 
-        public int FindMove()
+       
+
+        public override int MakeMove()
         {
             int randomColumn = rnd.Next(0, 7); // Adjust range according to the board width
             return randomColumn;
         }
-
-        
     }
 }

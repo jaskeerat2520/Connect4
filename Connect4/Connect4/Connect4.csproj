@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="bot.cs" />
+    <Compile Include="Bot.cs" />
     <Compile Include="Cells.cs" />
     <Compile Include="Connect4Game.cs" />
     <Compile Include="Console.cs" />
@@ -59,6 +59,12 @@
     </Compile>
     <Compile Include="GameBoard.cs" />
     <Compile Include="Interface1.cs" />
+    <Compile Include="Intro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Intro.Designer.cs">
+      <DependentUpon>Intro.cs</DependentUpon>
+    </Compile>
     <Compile Include="ISettings.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
@@ -66,6 +72,9 @@
     <Compile Include="User.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Intro.resx">
+      <DependentUpon>Intro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -75,6 +84,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -90,9 +100,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="images\coin.png" />
+    <Content Include="images\pngegg.png" />
+    <Content Include="images\SeekPng.com_pacman-sprite-png_3777584.png" />
     <Content Include="Properties\images\coin.png" />
     <Content Include="Properties\images\pngegg.png" />
     <Content Include="Properties\images\SeekPng.com_pacman-sprite-png_3777584.png" />
+    <None Include="Resources\pngegg.png" />
+    <None Include="Resources\coin.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

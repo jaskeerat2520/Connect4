@@ -7,26 +7,24 @@ using System.Windows.Forms;
 
 namespace Connect4
 {
-    public class Player
+    public abstract class Player
     {
-        public int id;
-        public string Name { get; set; }
-        public string color;
+        protected string name;
+        protected int id;
 
-     
+        public string Name { get { return name; } }
 
-        public Player(int id, string name, string color)
+
+        public Player(string name, int id)
         {
+            this.name = name;
             this.id = id;
-            Name = name;
-            this.color = color;
         }
 
-        public virtual void MakeMove(int collomn)
-        {
-        }
-
-
-
+        public abstract int MakeMove();
     }
+
+
+
 }
+
