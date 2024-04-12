@@ -45,18 +45,18 @@ namespace Connect4
        
         private void ButtonColumn7_Click(object sender, EventArgs e)
         {
-            int collomn = 6;
+            int column = 6;
             int row = 0;
 
-            row = gameBoard.IsFull(collomn);
+            row = gameBoard.IsFull(column);
 
             if (row >= 0)
             {
                 // make function to drop disk in location 
 
 
-                gameBoard.dropDisc(row, collomn, 1);
-                AddCoin(row, collomn, 1);
+                gameBoard.DropDisc(row, column, 1);
+                AddCoin(row, column, 1);
                 botTurn();
 
             }
@@ -64,18 +64,18 @@ namespace Connect4
 
         private void ButtonColumn6_Click(object sender, EventArgs e)
         {
-            int collomn = 5;
+            int column = 5;
             int row = 0;
 
-            row = gameBoard.IsFull(collomn);
+            row = gameBoard.IsFull(column);
 
             if (row >= 0)
             {
                 // make function to drop disk in location 
 
 
-                gameBoard.dropDisc(row, collomn, 1);
-                AddCoin(row, collomn,1 );
+                gameBoard.DropDisc(row, column, 1);
+                AddCoin(row, column,1 );
                 botTurn();
 
             }
@@ -84,18 +84,18 @@ namespace Connect4
         private void ButtonColumn3_Click(object sender, EventArgs e)
         {
 
-            int collomn = 2;
+            int column = 2;
             int row = 0;
 
-            row = gameBoard.IsFull(collomn);
+            row = gameBoard.IsFull(column);
 
             if (row >= 0)
             {
                 // make function to drop disk in location 
 
 
-                gameBoard.dropDisc(row, collomn, 1);
-                AddCoin(row, collomn, 1);
+                gameBoard.DropDisc(row, column, 1);
+                AddCoin(row, column, 1);
                 botTurn();
 
             }
@@ -103,18 +103,18 @@ namespace Connect4
 
         private void ButtonCollumn2_Click(object sender, EventArgs e)
         {
-            int collomn = 1;
+            int column = 1;
             int row = 0;
 
-            row = gameBoard.IsFull(collomn);
+            row = gameBoard.IsFull(column);
 
             if (row >= 0)
             {
                 // make function to drop disk in location 
 
 
-                gameBoard.dropDisc(row, collomn, 1);
-                AddCoin(row, collomn, 1);
+                gameBoard.DropDisc(row, column, 1);
+                AddCoin(row, column, 1);
                 botTurn();
 
             }
@@ -125,18 +125,18 @@ namespace Connect4
 
 
             
-            int collomn = 0;
-            int row = 0;
+            int column = 0;
+            int row= 0;
 
-            row = gameBoard.IsFull(collomn);
+            row = gameBoard.IsFull(column);
 
             if (row >= 0)
-            {
+            {   
                 // make function to drop disk in location 
                 
 
-                gameBoard.dropDisc(row, collomn, 1);
-                AddCoin(row, collomn, 1);
+                gameBoard.DropDisc(row, column, 1);
+                AddCoin(row, column, 1);
                 botTurn();
 
             }
@@ -151,12 +151,12 @@ namespace Connect4
         private void botTurn()
         {
            
-            int collumn = 0;
+            int column = 0;
             int row = 0;
             int id = 2;
 
-            collumn = botPlayer.MakeMove();
-            row = gameBoard.IsFull(collumn);
+            column = botPlayer.MakeMove();
+            row = gameBoard.IsFull(column);
 
 
 
@@ -166,9 +166,9 @@ namespace Connect4
 
 
               
-                gameBoard.dropDisc(row, collumn, 2);
+                gameBoard.DropDisc(row, column, 2);
                 MessageBox.Show(gameBoard.GetBoardAsString());
-                AddCoin(row, collumn, 2);
+                AddCoin(row, column, 2);
 
 
 
@@ -192,9 +192,11 @@ namespace Connect4
 
         private void AddCoin(int row, int column, int id)
         {
-            
-            
-        
+
+            if (gameBoard.CheckWinner(column, row, id))
+            {
+                ClearBoard(); 
+            }
             String together = (column.ToString() + row.ToString());
             String pictureBoxName = "PictureBox" + together.ToString();
 
@@ -238,20 +240,20 @@ namespace Connect4
         }
 
 
-        private void ButtonCollomn5_Click(object sender, EventArgs e)
+        private void ButtonColumn5_Click(object sender, EventArgs e)
         {
-            int collomn = 4;
+            int column = 4;
             int row = 0;
 
-            row = gameBoard.IsFull(collomn);
+            row = gameBoard.IsFull(column);
 
             if (row >= 0)
             {
                 // make function to drop disk in location 
 
 
-                gameBoard.dropDisc(row, collomn, 1);
-                AddCoin(row, collomn, 1);
+                gameBoard.DropDisc(row, column, 1);
+                AddCoin(row, column, 1);
                 botTurn();
 
             }
@@ -260,18 +262,18 @@ namespace Connect4
 
         private void ButtonColumn6_Click_1(object sender, EventArgs e)
         {
-            int collomn = 5;
+            int column = 5;
             int row = 0;
 
-            row = gameBoard.IsFull(collomn);
+            row = gameBoard.IsFull(column);
 
             if (row >= 0)
             {
                 // make function to drop disk in location 
 
 
-                gameBoard.dropDisc(row, collomn, 1);
-                AddCoin(row, collomn, 1);
+                gameBoard.DropDisc(row, column, 1);
+                AddCoin(row, column, 1);
                 botTurn();
 
             }
@@ -279,7 +281,57 @@ namespace Connect4
 
         private void Button4_Click(object sender, EventArgs e)
         {
+            int column = 3;
+            int row = 0;
 
+            row = gameBoard.IsFull(column);
+
+            if (row >= 0)
+            {
+                // make function to drop disk in location 
+
+
+                gameBoard.DropDisc(row, column, 1);
+                AddCoin(row, column, 1);
+                botTurn();
+
+            }
+        }
+
+        //making a function to clear the gameboard
+        private void ClearBoard()
+        {
+            // Reset the PictureBoxes
+            for (int column = 0; column < 7; column++)
+            {
+                for (int row = 0; row < 6; row++)
+                {
+                    string pictureBoxName = "PictureBox" + column.ToString() + row.ToString();
+
+
+                    Control[] controls = this.Controls.Find(pictureBoxName, true); // Assuming the PictureBox is contained within a form or a container
+
+                    if (controls.Length > 0 && controls[0] is PictureBox pictureBoxToChange)
+                    {
+                        // Assuming you have images stored with names like "image1.jpg", "image2.jpg", etc.
+
+                        pictureBoxToChange.SendToBack();
+                        pictureBoxToChange.BackColor = Color.Transparent;
+                    }
+
+
+                }
+            }
+
+            // Reset the game board array
+            for (int column = 0; column < 7; column++)
+            {
+                for (int row = 0; row < 6; row++)
+                {
+                    // Reset the PlayerId of each cell to -1
+                    gameBoard.Board[column, row].PlayerId = -1;
+                }
+            }
         }
     }
 }

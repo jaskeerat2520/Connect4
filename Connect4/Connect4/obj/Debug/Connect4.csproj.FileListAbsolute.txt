@@ -9,3 +9,14 @@ C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.csproj.CoreCompil
 C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.exe
 C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.pdb
 C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.Intro.resources
+C:\Users\alimu\Source\Repos\jaskeerat2520\Connect4\Connect4\Connect4\bin\Debug\Connect4.exe.config
+C:\Users\alimu\Source\Repos\jaskeerat2520\Connect4\Connect4\Connect4\bin\Debug\Connect4.exe
+C:\Users\alimu\Source\Repos\jaskeerat2520\Connect4\Connect4\Connect4\bin\Debug\Connect4.pdb
+C:\Users\alimu\Source\Repos\jaskeerat2520\Connect4\Connect4\Connect4\obj\Debug\Connect4.csproj.AssemblyReference.cache
+C:\Users\alimu\Source\Repos\jaskeerat2520\Connect4\Connect4\Connect4\obj\Debug\Connect4.Form1.resources
+C:\Users\alimu\Source\Repos\jaskeerat2520\Connect4\Connect4\Connect4\obj\Debug\Connect4.Intro.resources
+C:\Users\alimu\Source\Repos\jaskeerat2520\Connect4\Connect4\Connect4\obj\Debug\Connect4.Properties.Resources.resources
+C:\Users\alimu\Source\Repos\jaskeerat2520\Connect4\Connect4\Connect4\obj\Debug\Connect4.csproj.GenerateResource.cache
+C:\Users\alimu\Source\Repos\jaskeerat2520\Connect4\Connect4\Connect4\obj\Debug\Connect4.csproj.CoreCompileInputs.cache
+C:\Users\alimu\Source\Repos\jaskeerat2520\Connect4\Connect4\Connect4\obj\Debug\Connect4.exe
+C:\Users\alimu\Source\Repos\jaskeerat2520\Connect4\Connect4\Connect4\obj\Debug\Connect4.pdb
