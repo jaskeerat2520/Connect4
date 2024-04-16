@@ -62,6 +62,44 @@ namespace Connect4
             MessageBox.Show("Invalid move, please choose an empty slot");
             return -1;
         }
+        
+        // Method to check if a column is full
+        public bool IsColumnFull(int column)
+        {
+            return IsFull(column) == -1;
+        }
+
+        // Method to get the width of the game board (number of columns)
+        public int GetWidth()
+        {
+            return Board.GetLength(0);
+        }
+
+        // Method to set the player ID of a cell on the game board
+        public void SetCell(int row, int column, int playerId)
+        {
+            if (row >= 0 && row < 6 && column >= 0 && column < 7)
+            {
+                Board[column, row].PlayerId = playerId;
+            }
+        }
+
+        // Method to get the height of the game board (number of rows)
+        public int GetHeight()
+        {
+            return Board.GetLength(1);
+        }
+
+        // Method to get the player ID of a cell on the game board
+        public int GetCell(int row, int column)
+        {
+            if (row >= 0 && row < 6 && column >= 0 && column < 7)
+            {
+                return Board[column, row].PlayerId;
+            }
+            return -1; // Out of bounds
+        }
+
         //creating a function to clear the gameboard 
         private void ClearBoard()
         {
@@ -138,7 +176,53 @@ namespace Connect4
             return consecutiveCount;
         }
 
+        public bool CheckTie()
+        {
+            // Check if all columns are full
+            for (int column = 0; column < 7; column++)
+            {
+                if (IsFull(column) >= 0)
+                {
+                    // There is an empty space in at least one column, so it's not a tie
+                    return false;
+                }
+            }
 
+            // If all columns are full and no player has won, it's a tie
+            return true;
+        }
+        //making sure the game is not over (for the ai)
+        public bool IsGameOver()
+        {
+            // Check if there's a tie
+            bool isTie = CheckTie();
+
+            // If there's a tie, return true
+            if (isTie)
+            {
+                return true;
+            }
+
+            // Otherwise, check if a player has won
+            for (int column = 0; column < 7; column++)
+            {
+                for (int row = 0; row < 6; row++)
+                {
+                    // Get the player ID at the current position
+                    int playerId = Board[column, row].PlayerId;
+
+                    // If the current position is not empty and a player has won at this position
+                    if (playerId >= 0 && CheckWinner(column, row, playerId))
+                    {
+                        // Return true since a player has won
+                        return true;
+                    }
+                }
+            }
+
+            // If neither tie nor win condition is fulfilled, return false
+            return false;
+        }
         internal void DropDisc(int row, int column, int playerId)
         {
             if (Board[column, row].PlayerId < 0)
