@@ -1,0 +1,14 @@
+C:\Users\Jas\source\repos\Connect4\Connect4\bin\Debug\Connect4.exe.config
+C:\Users\Jas\source\repos\Connect4\Connect4\bin\Debug\Connect4.exe
+C:\Users\Jas\source\repos\Connect4\Connect4\bin\Debug\Connect4.pdb
+C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.csproj.AssemblyReference.cache
+C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.Form1.resources
+C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.Properties.Resources.resources
+C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.csproj.GenerateResource.cache
+C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.csproj.CoreCompileInputs.cache
+C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.exe
+C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.pdb
+C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.Intro.resources
+C:\Users\Jas\source\repos\Connect4\Connect4\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Jas\source\repos\Connect4\Connect4\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Jas\source\repos\Connect4\Connect4\obj\Debug\Connect4.csproj.CopyComplete
